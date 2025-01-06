@@ -1,4 +1,4 @@
-import { Button, Image, StyleSheet, Text, Touchable, TouchableOpacity, View, Alert } from 'react-native'
+import { Button, Image, StyleSheet, Text, Touchable, TouchableOpacity, View, Alert, Pressable } from 'react-native'
 import React from 'react'
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       />
       <Button title='Just Exploring ReactNative' />
 
-      <TouchableOpacity 
+      {/* <TouchableOpacity 
       style={btnStyles.container}
       onPress={() => Alert.alert('This is not a normal btn what it does is basically provide a touchable effect')}>
         <Text>onPress btn</Text>
@@ -26,7 +26,13 @@ const App = () => {
       style={{...btnStyles.container,backgroundColor:"red",}}
       onLongPress={() => Alert.alert('This is not a normal btn what it does is basically provide a touchable effect of longPress}')}>
         <Text>onLongPress btn</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <Pressable
+        style={btnStyles.container}
+        onPress={() => Alert.alert('This is not a normal btn what it does is basically provide a touchable effect')}
+        >
+          <Text>Pressable</Text>
+        </Pressable>
     </View>
   )
 }

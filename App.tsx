@@ -1,24 +1,44 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, useColorScheme, View } from 'react-native';
 
 const App = () => {
+  const theme = useColorScheme();
+  const darkMode = theme ==='dark';
+  const backgroundColor = darkMode ? "black": "white";
+  const textColor = darkMode ? 'white' :" black";
   return (
-    <View style={styles.container}>
-      <View style={{width:"50%", height:"50%", backgroundColor:"red"}}>
-      
-      </View>  
+    <View style={[styles.container, {backgroundColor: backgroundColor}]}>
+      <Text style={[styles.textColor,{color: textColor}]}>Hello App</Text>
+      <View style={styles.view2}>
+        <Text style={[styles.textColor,{color: textColor}]}>View 2</Text>
+      </View>    
+      <View style={styles.view3}>
+        <Text style={[styles.textColor,{color: textColor}]}>View 3</Text>
+        </View>  
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container:{
-    // flex:1,
-    width:"100%",
-    height:"100%",
+    flex:1,
+    // width:"100%",
+    // height:"100%",
     // justifyContent:"center",
     // alignItems:"center"
-  }
+  },
+  textColor:{
+    fontSize: 60,
+    fontWeight: "800",
+  },
+  view2:{
+    flex:2,
+    backgroundColor:"green"
+  },
+  view3:{
+    flex:3,
+    backgroundColor:"skyblue"
+  },
 })
 
 export default App;

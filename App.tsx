@@ -8,16 +8,28 @@ const App = () => {
   const textColor = darkMode ? 'white' :" black";
   return (
     <View style={[styles.container, {backgroundColor: backgroundColor}]}>
-      <Text style={[styles.textColor,{color: textColor}]}>Hello App</Text>
+      {/* <Text style={[styles.textColor,{color: textColor}]}>Hello App</Text> */}
       <View style={styles.view2}>
-        <Text style={[styles.textColor,{color: textColor}]}>View 2</Text>
+        {/* <Text style={[styles.textColor,{color: textColor}]}>View 2</Text> */}
       </View>    
       <View style={styles.view3}>
-        <Text style={[styles.textColor,{color: textColor}]}>View 3</Text>
+        {/* <Text style={[styles.textColor,{color: textColor}]}>View 3</Text> */}
+        </View>  
+        <View style={styles.view4}>
+        {/* <Text style={[styles.textColor,{color: textColor}]}>View 3</Text> */}
         </View>  
     </View>
   );
 }
+// flex logic:
+// 1. 1st view is 1/6 of the screen
+// 2. 2nd view is 2/6 of the screen
+// 3. 3rd view is 3/6 of the screen
+
+// flex logic for equal division:
+// 1. 1st view is 1/6 of the screen
+// 2. 2nd view is 1/6 of the screen
+// 3. 3rd view is 1/6 of the screen
 
 const styles = StyleSheet.create({
   container:{
@@ -26,19 +38,32 @@ const styles = StyleSheet.create({
     // height:"100%",
     // justifyContent:"center",
     // alignItems:"center"
+
+    flexDirection:"row-reverse",
   },
   textColor:{
     fontSize: 60,
     fontWeight: "800",
+   
   },
   view2:{
-    flex:2,
-    backgroundColor:"green"
+    // flex:1,
+    backgroundColor:"green",
+    width:50,
+    height:50,
   },
   view3:{
-    flex:3,
-    backgroundColor:"skyblue"
+    // flex:1,
+    backgroundColor:"skyblue",
+    width:50,
+    height:50,
   },
+  view4:{
+    // flex:1,
+    backgroundColor:"orange",
+    width:50,
+    height:50,
+  }
 })
 
 export default App;

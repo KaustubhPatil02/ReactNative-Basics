@@ -39,7 +39,10 @@ const styles = StyleSheet.create({
     // justifyContent:"center",
     // alignItems:"center"
 
-    flexDirection:"row-reverse",
+    flexDirection:"column", //main axis
+    // flex-start, flex-end, center, space-between, space-around, space-evenly
+    justifyContent:"center", //cross axis. Aligns items horizontally */
+    alignItems:"center", //cross axis. Aligns items vertically */
   },
   textColor:{
     fontSize: 60,

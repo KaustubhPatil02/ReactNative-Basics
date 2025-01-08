@@ -1,43 +1,71 @@
-import { Button, Image, StyleSheet, Text, Touchable, TouchableOpacity, View, Alert, Pressable, SafeAreaView, useColorScheme } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 const App = () => {
- const theme = useColorScheme();
- console.log(theme, "theme")
-
- const isDarkMode = theme ==='dark';
- const backgroundColor = isDarkMode ? "black" : "white";
- const textColor = isDarkMode ? "white" : "black";
   return (
-    <View style={[styles.container, {backgroundColor: backgroundColor}]}>
-      <Text style={[styles.text, {color: textColor}]}>Hello App</Text>
+    <View style={styles.container}>
+      <View style={{width:"50%", height:"50%", backgroundColor:"red"}}>
+      
+      </View>  
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, // Makes the container take up all available space
-    // backgroundColor: 'dark',
-    justifyContent: 'center', // Centers children vertically 
-    alignItems: 'center', // Centers children horizontally
-  },
-  text: {
-    color: 'black',
-    fontSize: 30,
-    fontWeight: '800'
-  }
-});
-const btnStyles = StyleSheet.create({
-  container: {
-    padding: 20,
-    paddingTop: 10,
-    backgroundColor: "skyblue",
-    borderRadius: 5,
-    margin: 10
+  container:{
+    // flex:1,
+    width:"100%",
+    height:"100%",
+    // justifyContent:"center",
+    // alignItems:"center"
   }
 })
-export default App
+
+export default App;
+
+
+
+
+// import { Button, Image, StyleSheet, Text, Touchable, TouchableOpacity, View, Alert, Pressable, SafeAreaView, useColorScheme } from 'react-native'
+// import React from 'react'
+
+// const App = () => {
+//  const theme = useColorScheme();
+//  console.log(theme, "theme")
+
+//  const isDarkMode = theme ==='dark';
+//  const backgroundColor = isDarkMode ? "black" : "white";
+//  const textColor = isDarkMode ? "white" : "black";
+//   return (
+//     <View style={[styles.container, {backgroundColor: backgroundColor}]}>
+//       <Text style={[styles.text, {color: textColor}]}>Hello App</Text>
+//     </View>
+//   )
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1, // Makes the container take up all available space
+//     // backgroundColor: 'dark',
+//     justifyContent: 'center', // Centers children vertically 
+//     alignItems: 'center', // Centers children horizontally
+//   },
+//   text: {
+//     color: 'black',
+//     fontSize: 30,
+//     fontWeight: '800'
+//   }
+// });
+// const btnStyles = StyleSheet.create({
+//   container: {
+//     padding: 20,
+//     paddingTop: 10,
+//     backgroundColor: "skyblue",
+//     borderRadius: 5,
+//     margin: 10
+//   }
+// })
+// export default App
 
 // <SafeAreaView style={styles.container}>
 //   {/* <View style={styles.container}> */}

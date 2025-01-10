@@ -100,6 +100,7 @@ const App = () => {
           </View>
         )}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
+        numColumns={2}
       />
     </View>
   );
@@ -113,6 +114,8 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   card: {
+    width:'30%',
+    height:'100%',
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 15,

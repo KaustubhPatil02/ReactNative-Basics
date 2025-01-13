@@ -5,35 +5,51 @@ const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const second = 'Welcome to the login page';
+  // const [text, settext] = useState(second) // this is the state variable
 
+  const [submitText, setSubmitText] = useState({username:'', password:''})
+
+  const handleLogin = ()=>{
+   setSubmitText({username, password})
+   setPassword('');
+   setUsername('');
+  }
 
   return (
     <View style={styles.container}>
-      <Text style={{ textAlign: 'center', fontSize:26, fontWeight:'bold' }}>Welcome again</Text>
+      <Text style={{ textAlign: 'center', fontSize:26, fontWeight:'bold' }}>{second}</Text>
       <Text style={{ textAlign: 'center', fontSize:16, fontWeight:'bold' }}>LOGIN !!</Text>
       <TextInput
         style={styles.textInput}
         placeholder='Username'
         value={username}
         onChangeText={setUsername}
+        // (username) => setUsername(username)
+        // multiline
+        // numberOfLines={3}
       />
       <TextInput
         style={styles.textInput}
         placeholder='Password'
         value={password}
         onChangeText={setPassword}
+        // (password) => setPassword(password)
         secureTextEntry
+        keyboardType='numeric'
       />
       <Pressable 
-        style={{ width: '100%', backgroundColor: '#8174A0', padding: 10, borderRadius: 5, alignItems: 'center', marginTop: 10 }}
-        onPress={() => Alert.alert('Login', `Username: ${username}, Password: ${password}`, [{ text: 'Close' }])}
+        style={{ width: '100%', backgroundColor: '#500073', padding: 10, borderRadius: 5, alignItems: 'center', marginTop: 10 }}
+        onPress={handleLogin}
         >
           <Text style={{ color: 'white' }}>Login</Text>
         </Pressable>
         <View style={{ marginTop: 20 }}>
           <Text style={{fontSize: 20,  fontWeight:'bold'}}>Your Entered Data for handling users input:</Text>
-          <Text style={{fontSize: 16}}>Username:{username} </Text>
-          <Text style={{fontSize: 16}}>Password:{password} </Text>
+          {submitText.password && submitText.password ?
+            (<><Text style={{ fontSize: 16 }}>Username:{submitText.username} </Text><Text style={{ fontSize: 16 }}>Password:{submitText.password} </Text></>):
+          null
+          }
 
         </View>
 
@@ -46,7 +62,7 @@ export default App
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#86A788',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
